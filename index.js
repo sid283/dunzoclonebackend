@@ -16,7 +16,7 @@ app.use("/restaurants",restaurantController)
 app.use("/fruits",fruitController)
 app.use("/vegetables",vegetableController)
 
-app.listen(5000,async()=>{
+app.listen(process.env.PORT || 5000,async()=>{
     try{
         await connect()
         console.log("Listening on port 5000")
