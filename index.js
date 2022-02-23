@@ -1,3 +1,8 @@
+
+const express = require("express")
+require("dotenv").config()
+const connect = require("./src/configs/db")
+const app = express()
 app.all('*', function(req, res, next) {
     var origin = req.get('origin'); 
     res.header('Access-Control-Allow-Origin', origin);
@@ -5,10 +10,6 @@ app.all('*', function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-const express = require("express")
-require("dotenv").config()
-const connect = require("./src/configs/db")
-const app = express()
 const groceryController = require("./src/controllers/groceries.controller")
 const restaurantController = require("./src/controllers/restaurants.controller")
 const fruitController = require("./src/controllers/fruits.controller")
