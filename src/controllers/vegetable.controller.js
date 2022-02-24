@@ -1,5 +1,5 @@
 const express = require('express')
-const Vegetable = require('../models/fruits.model')
+const Vegetable = require('../models/vegetables.model')
 const router = express.Router()
 
 router.post("",async(req,res)=>{
