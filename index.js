@@ -14,7 +14,8 @@ const groceryController = require("./src/controllers/groceries.controller")
 const restaurantController = require("./src/controllers/restaurants.controller")
 const fruitController = require("./src/controllers/fruits.controller")
 const vegetableController = require("./src/controllers/vegetable.controller")
-
+const restaurantnameController = require("./src/controllers/restaurantname.controller")
+const marketController = require("./src/controllers/market.controller")
 
 
 app.use(express.json())
@@ -23,6 +24,8 @@ app.use("/groceries",groceryController)
 app.use("/restaurants",restaurantController)
 app.use("/fruits",fruitController)
 app.use("/vegetables",vegetableController)
+app.use("/restaurantnames",restaurantnameController)
+app.use("/markets",marketController)
 
 app.listen(process.env.PORT || 5000,async()=>{
     try{
