@@ -22,7 +22,7 @@ router.get("",async(req,res)=>{
 
 router.patch("/:id",async(req,res)=>{
     try{
-        const market = await Market.findOneAndUpdate({id:req.params.id},{new:true}).lean().exec()
+        const market = await Market.findOneAndUpdate({id:req.params.id},req.body,{new:true}).lean().exec()
         return res.send(market)
     }catch(err){
         return res.status(500).send({message: err.message})
