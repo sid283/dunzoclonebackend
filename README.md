@@ -6,11 +6,17 @@ We used JavaScript, MongoDB, Express.js, Node.js. We also used Heroku to deploy 
 # 3. End points:
 Using the below endpoints one can do the basuc CRUD operations.
 https://dunzobackendclone.herokuapp.com/groceries
+
 https://dunzobackendclone.herokuapp.com/restaurants
+
 https://dunzobackendclone.herokuapp.com/fruits
+
 https://dunzobackendclone.herokuapp.com/vegetables
+
 https://dunzobackendclone.herokuapp.com/restaurantnames
+
 https://dunzobackendclone.herokuapp.com/markets
+
 https://dunzobackendclone.herokuapp.com/auth/google
 
 # 4. Quick start:
