@@ -10,7 +10,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://bheema-284.github.io/dunzoclone/homepage/homepage.html",
+      callbackURL: "https://sid283.github.io/dunzo_clone/homepage/homepage.html",
       passReqToCallback: true,
     },
     async function (request, accessToken, refreshToken, profile, done) {
