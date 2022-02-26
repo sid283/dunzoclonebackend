@@ -17,6 +17,7 @@ const vegetableController = require("./src/controllers/vegetable.controller")
 const restaurantnameController = require("./src/controllers/restaurantname.controller")
 const marketController = require("./src/controllers/market.controller")
 const userController = require("./src/controllers/user.controller");
+const passport = require("./src/configs/google-oauth");
 const { register, login, newToken } = require("./src/controllers/auth.controller");
 
 
