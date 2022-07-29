@@ -14,7 +14,11 @@ const groceryController = require("./src/controllers/groceries.controller")
 const restaurantController = require("./src/controllers/restaurants.controller")
 const fruitController = require("./src/controllers/fruits.controller")
 const vegetableController = require("./src/controllers/vegetable.controller")
-
+const restaurantnameController = require("./src/controllers/restaurantname.controller")
+const marketController = require("./src/controllers/market.controller")
+const userController = require("./src/controllers/user.controller");
+const passport = require("./src/configs/google-oauth");
+const { register, login, newToken } = require("./src/controllers/auth.controller");
 
 
 app.use(express.json())
@@ -23,6 +27,38 @@ app.use("/groceries",groceryController)
 app.use("/restaurants",restaurantController)
 app.use("/fruits",fruitController)
 app.use("/vegetables",vegetableController)
+app.use("/restaurantnames",restaurantnameController)
+app.use("/markets",marketController)
+app.post("/register", register);
+// .login
+app.post("/login", login);
+
+app.use("/users", userController);
+
+passport.serializeUser(function (user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+  done(null, user);
+});
+
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["email", "profile"] })
+);
+
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/auth/google/failure",
+  }),
+  (req, res) => {
+    const { user } = req;
+    const token = newToken(user);
+    return res.send({ user, token });
+  }
+);
 
 app.listen(process.env.PORT || 5000,async()=>{
     try{
